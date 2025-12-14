@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VoletsController!
+{% endblock %}
+
+{% block body %}
+	<h2>Volet Séjour</h2>
+
+	{% if volet %}
+		<p>Etat :
+			{{ volet.state }}</p>
+		<p>Position :
+			{# {{ volet.attributes.current_position }}%</p> #}
+		{% else %}
+			<p>Impossible de récupérer l’état</p>
+		{% endif %}
+
+		<a href="{{ path('volets_open') }}" class="menu-item">Ouvrir</a>
+		<a href="{{ path('volets_close') }}" class="menu-item">Fermer</a>
+
+
+	{% endblock %}
